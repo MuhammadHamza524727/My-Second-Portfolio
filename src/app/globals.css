@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.caveat {
+  font-family: var(--font-caveat);
+}
+.nunito {
+  font-family: var(--font-nunito);
+}
+
+.perspective {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.animate-spin-slow {
+  animation: spin 10s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+  to {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+}
