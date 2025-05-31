@@ -2,6 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.animate-pacman-move {
+  animation: pacman-move 1s infinite linear;
+}
+
+.animate-pacman-mouth {
+  animation: pacman-mouth 0.5s infinite;
+}
+
+.animate-dot-move-1 {
+  animation: dot-move 1s infinite ease-in-out;
+}
+
+.animate-dot-move-2 {
+  animation: dot-move 1s infinite ease-in-out 0.2s;
+}
+
+.animate-dot-move-3 {
+  animation: dot-move 1s infinite ease-in-out 0.4s;
+}
+
+@keyframes pacman-move {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(20px); }
+}
+
+@keyframes pacman-mouth {
+  0% { border-left-width: 24px; transform: translateY(-50%) scale(1); }
+  50% { border-left-width: 0; transform: translateY(-50%) scale(0.5); }
+  100% { border-left-width: 24px; transform: translateY(-50%) scale(1); }
+}
+
+@keyframes dot-move {
+  0% { transform: translateX(0); opacity: 1; }
+  50% { transform: translateX(-40px); opacity: 0.5; }
+  100% { transform: translateX(-80px); opacity: 0; }
+}
+
 .caveat {
   font-family: var(--font-caveat);
 }
