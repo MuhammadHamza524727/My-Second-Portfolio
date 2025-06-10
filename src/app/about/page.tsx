@@ -19,7 +19,7 @@ const Page = () => {
   const [isContactHovered, setIsContactHovered] = useState(false);
 
   return (
-    <div className="flex flex-col items-start justify-center nunito p-7 min-h-screen bg-[#022C43] text-white">
+    <div  className="flex flex-col items-start justify-center nunito p-7 min-h-screen bg-[#022C43] text-white">
       {/* Sidebar */}
       {/* <Navbar/> */}
 
@@ -75,9 +75,9 @@ const Page = () => {
             My goal is to leverage this diverse knowledge to create impactful
             digital experiences that push the boundaries of Generative A.I.
           </p>
-          {/* <div>
+          <div>
             <RotatingCube />
-          </div> */}
+          </div>
         </div>
 
         <div className="text-gray-400 mt-14">

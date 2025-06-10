@@ -1,7 +1,29 @@
+"use client" 
+import "aos/dist/aos.css"
 import HomePage from '@/components/HomePage'
-import React from 'react'
+import React, { useEffect } from 'react'
+import AOS from "aos" 
 
-const page = () => {
+
+
+
+
+const Page = () => {
+  useEffect (() => {
+
+AOS.init({
+easing:"ease-out-back",
+duration:1200,
+delay:100,
+mirror: true,
+anchorPlacement:"bottom-bottom",
+offset:160,
+
+});
+AOS.refresh()
+},[]);
+
+
   return (
     <div>
       <HomePage/>
@@ -9,4 +31,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
