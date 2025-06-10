@@ -211,7 +211,7 @@ const HomePage = () => {
                 I{" "}
               </span>{" "}
               <span className="inline-block hover:animate-bump hover:text-yellow-400">
-                'm
+                &#96;m
               </span>{" "}
               <span className="text-yellow-400 caveat ">
                 <span className="inline-block hover:animate-bump text-white hover:text-yellow-400">
