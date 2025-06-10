@@ -13,14 +13,14 @@ const Navbar = () => {
       <div className="fixed left-0 top-0 h-full w-16 flex flex-col items-center bg-[#181818]">
         <div className="mt-6">
           <Link href={"/"}>
-          <span className="text-yellow-400 nunito text-2xl font-bold">H.</span>
+          <span className="text-yellow-400 nunito sm:text-sm lg:text-2xl font-bold">H.</span>
           </Link>
         </div>
 
         <div className="mt-auto sm:space-y-4 md:space-y-6 flex items-center flex-col">
           <div className="text-gray-500 text-xl hover:text-yellow-400">
             <Link href="/">
-              <span className="text-gray-400 text-sm font-light hover:text-yellow-400">
+              <span className="text-gray-400 sm:text-sm lg:text-xl font-light hover:text-yellow-400">
                 <GrHomeRounded />
               </span>
             </Link>
@@ -28,7 +28,7 @@ const Navbar = () => {
 
           <div className="text-gray-500 text-xl hover:text-yellow-400">
             <Link href="/about">
-              <span className="text-gray-400 text-sm font-light hover:text-yellow-400">
+              <span className="text-gray-400 sm:text-sm lg:text-xl font-light hover:text-yellow-400">
                 <FaUserLarge />
               </span>
             </Link>
@@ -36,7 +36,7 @@ const Navbar = () => {
 
           <div className="text-gray-500 text-xl hover:text-yellow-400">
             <Link href="/portfolio">
-              <span className="text-gray-400 text-sm font-light hover:text-yellow-400">
+              <span className="text-gray-400 sm:text-sm lg:text-xl font-light hover:text-yellow-400">
                 <IoTabletPortraitOutline />
               </span>
             </Link>
@@ -44,7 +44,7 @@ const Navbar = () => {
 
           <div className="text-gray-500 text-xl hover:text-yellow-400">
             <Link href="/contact">
-              <span className="text-gray-400 text-sm font-light hover:text-yellow-400">
+              <span className="text-gray-400 sm:text-sm lg:text-xl font-light hover:text-yellow-400">
                 <RiContactsBook2Fill />
               </span>
             </Link>
@@ -53,13 +53,13 @@ const Navbar = () => {
 
         <div className="flex mt-auto mb-6 space-y-4 justify-center items-center flex-col">
           <Link href="https://www.linkedin.com/in/muhammad-hamza-1461432a5?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BbumNdwPJQnyHe8gf5Jsflw%3D%3D">
-            <CiLinkedin className="text-gray-500 text-xl hover:text-yellow-400" />
+            <CiLinkedin className="text-gray-500 sm:text-sm lg:text-xl hover:text-yellow-400" />
           </Link>
           <Link href="https://github.com/MuhammadHamza524727">
-            <IoLogoGithub className="text-gray-500 text-xl hover:text-yellow-400" />
+            <IoLogoGithub className="text-gray-500 sm:text-sm lg:text-xl hover:text-yellow-400" />
           </Link>
           <Link href="https://vercel.com/muhammad-hamzas-projects-a3383566">
-            <RxVercelLogo className="text-gray-500 text-xl hover:text-yellow-400" />
+            <RxVercelLogo className="text-gray-500 sm:text-sm lg:text-xl hover:text-yellow-400" />
           </Link>
         </div>
       </div>

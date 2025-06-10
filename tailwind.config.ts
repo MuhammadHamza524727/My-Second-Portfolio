@@ -22,6 +22,12 @@ const config: Config = {
 
 
       },
+      animation: {
+        bump: 'bump  0.6s ease-in-out',
+        bounce: 'bounce 0.6s infinite',
+        "pulse-slow": "pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        
+      },
       keyframes: {
         bump: {
 
@@ -32,11 +38,10 @@ const config: Config = {
           '70%': { transform: 'scale(1.1) translateY(-2px)' }, // Slightly settle down
           '100%': { transform: 'scale(1) translateY(0)' },
         },
-      },
-      animation: {
-        bump: 'bump  0.6s ease-in-out',
-        bounce: 'bounce 0.6s infinite',
-
+        "pulse-slow": {
+          "0%, 100%": { opacity: '1' },
+          "50%": { opacity: '0.5' },
+        },
       },
       screens: {
         'sm': '100px',

@@ -67,3 +67,23 @@
     transform: rotateY(360deg) rotateX(360deg);
   }
 }
+
+
+/* optional: custom spin loader if needed */
+@layer utilities {
+  .animate-bump {
+    animation: bump 0.4s ease-in-out;
+  }
+
+  @keyframes bump {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}
