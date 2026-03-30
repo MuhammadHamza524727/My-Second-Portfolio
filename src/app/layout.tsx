@@ -1,22 +1,19 @@
 import type { Metadata } from "next";
-import { Inter , Caveat , Nunito } from "next/font/google";
+import { Caveat, Nunito } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
+const caveat_init = Caveat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-caveat",
+});
 
-const  caveat_init = Caveat({
-  subsets: ['latin'] ,
-  weight:['400','500','600','700'],
-  variable:'--font-caveat',
-})
-
-const  nunito_init = Nunito({
-  subsets: ['latin'] ,
-  weight:['200','300','400','500','600','700','800','900'],
-  variable:'--font-nunito',
-})
-
-const inter = Inter({ subsets: ["latin"] });
+const nunito_init = Nunito({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-nunito",
+});
 
 export const metadata: Metadata = {
   title: "Hamza Portfolio",
@@ -30,8 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className= {`${inter.className} ${caveat_init.variable} ${nunito_init.variable}`} >{children} 
-        <Navbar/>
+      <body className={`${caveat_init.variable} ${nunito_init.variable} ${nunito_init.className}`}>
+        {children}
+        <Navbar />
       </body>
     </html>
   );
