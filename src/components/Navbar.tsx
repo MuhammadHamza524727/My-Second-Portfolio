@@ -39,50 +39,81 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="fixed left-0 top-0 h-full w-16 flex flex-col items-center bg-[#0d2233] border-r border-[#1a3a52] z-50">
-      {/* Logo */}
-      <div className="mt-6">
-        <Link href="/">
-          <span className="text-yellow-400 nunito text-2xl font-bold hover:text-yellow-300 transition-colors">
-            H.
-          </span>
-        </Link>
+    <>
+      {/* Desktop sidebar */}
+      <div className="hidden md:flex fixed left-0 top-0 h-full w-16 flex-col items-center bg-[#0d2233] border-r border-[#1a3a52] z-50">
+        {/* Logo */}
+        <div className="mt-6">
+          <Link href="/">
+            <span className="text-yellow-400 nunito text-2xl font-bold hover:text-yellow-300 transition-colors">
+              H.
+            </span>
+          </Link>
+        </div>
+
+        {/* Nav Icons */}
+        <div className="mt-auto flex flex-col items-center gap-5">
+          {navLinks.map(({ href, icon, label }) => {
+            const isActive = pathname === href;
+            return (
+              <Link key={href} href={href} title={label}>
+                <span
+                  className={`text-xl transition-colors ${
+                    isActive
+                      ? "text-yellow-400"
+                      : "text-gray-500 hover:text-yellow-400"
+                  }`}
+                >
+                  {icon}
+                </span>
+                {isActive && (
+                  <span className="block w-1 h-1 bg-yellow-400 rounded-full mx-auto mt-1" />
+                )}
+              </Link>
+            );
+          })}
+        </div>
+
+        {/* Social Icons */}
+        <div className="flex mt-auto mb-6 flex-col items-center gap-4">
+          {socialLinks.map(({ href, icon, label }) => (
+            <Link key={href} href={href} target="_blank" title={label}>
+              <span className="text-xl text-gray-500 hover:text-yellow-400 transition-colors">
+                {icon}
+              </span>
+            </Link>
+          ))}
+        </div>
       </div>
 
-      {/* Nav Icons */}
-      <div className="mt-auto flex flex-col items-center gap-5">
+      {/* Mobile bottom bar */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 h-14 flex items-center justify-around bg-[#0d2233] border-t border-[#1a3a52] z-50">
         {navLinks.map(({ href, icon, label }) => {
           const isActive = pathname === href;
           return (
-            <Link key={href} href={href} title={label}>
+            <Link key={href} href={href} title={label} className="flex flex-col items-center gap-0.5">
               <span
                 className={`text-xl transition-colors ${
-                  isActive
-                    ? "text-yellow-400"
-                    : "text-gray-500 hover:text-yellow-400"
+                  isActive ? "text-yellow-400" : "text-gray-500"
                 }`}
               >
                 {icon}
               </span>
               {isActive && (
-                <span className="block w-1 h-1 bg-yellow-400 rounded-full mx-auto mt-1" />
+                <span className="block w-1 h-1 bg-yellow-400 rounded-full" />
               )}
             </Link>
           );
         })}
-      </div>
-
-      {/* Social Icons */}
-      <div className="flex mt-auto mb-6 flex-col items-center gap-4">
         {socialLinks.map(({ href, icon, label }) => (
           <Link key={href} href={href} target="_blank" title={label}>
-            <span className="text-xl text-gray-500 hover:text-yellow-400 transition-colors">
+            <span className="text-xl text-gray-500">
               {icon}
             </span>
           </Link>
         ))}
       </div>
-    </div>
+    </>
   );
 };
 

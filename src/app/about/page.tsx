@@ -19,12 +19,9 @@ const Page = () => {
   const [isContactHovered, setIsContactHovered] = useState(false);
 
   return (
-    <div  className="flex flex-col items-start justify-center nunito p-7 min-h-screen bg-[#022C43] text-white">
-      {/* Sidebar */}
-      {/* <Navbar/> */}
-
+    <div  className="flex flex-col items-start justify-center nunito p-7 pb-20 md:pb-7 min-h-screen bg-[#022C43] text-white">
       {/* Main Content */}
-      <main className="ml-20 flex flex-col items-start justify-start text-start md:max-w-5xl px-8  ">
+      <main className="ml-0 md:ml-20 flex flex-col items-start justify-start text-start md:max-w-5xl px-4 md:px-8">
         <div className="text-gray-400">
           <p className="text-sm text-yellow-600 caveat">&lt;html&gt;</p>
           <p className="text-sm text-yellow-600 md:mb-10 caveat">
@@ -62,7 +59,7 @@ const Page = () => {
             &lt;/h1&gt;
           </p>
         </h1>
-        <div data-aos="zoom-in-right" className="flex gap-64  ">
+        <div data-aos="zoom-in-right" className="flex flex-col md:flex-row gap-8 md:gap-16">
           <p className="md:text-[14px] flex sm:text-[10px] mt-4 text-gray-300 sm:w-[80%] md:w-[50%]">
             I m a passionate front-end developer on a journey to become a
             full-stack powerhouse. <br />

@@ -67,8 +67,8 @@ const Page = () => {
   };
 
   return (
-    <div className="flex flex-col items-start justify-center nunito p-7 min-h-screen bg-[#022C43] text-white">
-      <main className="ml-20 flex flex-col items-start justify-start text-start w-full max-w-2xl px-8">
+    <div className="flex flex-col items-start justify-center nunito p-7 pb-20 md:pb-7 min-h-screen bg-[#022C43] text-white">
+      <main className="ml-0 md:ml-20 flex flex-col items-start justify-start text-start w-full max-w-2xl px-4 md:px-8">
         {/* HTML Tags */}
         <div>
           <p className="text-sm text-yellow-600 caveat">&lt;html&gt;</p>

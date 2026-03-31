@@ -19,9 +19,9 @@ const HomePage = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <div  className="flex nunito flex-col items-start justify-center p-7 min-h-screen bg-[#022C43] text-white">
+        <div  className="flex nunito flex-col items-start justify-center p-7 pb-20 md:pb-7 min-h-screen bg-[#022C43] text-white">
           {/* Main Content */}
-          <main className="ml-20 flex flex-col items-start justify-start text-start max-w-2xl px-8">
+          <main className="ml-0 md:ml-20 flex flex-col items-start justify-start text-start max-w-2xl px-4 md:px-8">
             <div className="text-gray-400">
               <p className="text-sm text-yellow-600 caveat">&lt;html&gt;</p>
               <p className="text-sm text-yellow-600 md:mb-10 caveat">
