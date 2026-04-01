@@ -67,7 +67,7 @@ const Page = () => {
   };
 
   return (
-    <div className="flex flex-col items-start justify-center nunito p-7 pb-20 md:pb-7 min-h-screen bg-[#022C43] text-white">
+    <div className="flex flex-col items-start justify-center nunito p-7 pb-20 md:pb-7 min-h-screen bg-[var(--bg)] text-[var(--text)]">
       <main className="ml-0 md:ml-20 flex flex-col items-start justify-start text-start w-full max-w-2xl px-4 md:px-8">
         {/* HTML Tags */}
         <div>
@@ -81,7 +81,7 @@ const Page = () => {
           {"Contact.".split("").map((char, index) => (
             <span
               key={index}
-              className="inline-block hover:animate-bump hover:text-white text-yellow-400"
+              className="inline-block hover:animate-bump dark:hover:text-white hover:text-[#1a0f02] text-yellow-400"
             >
               {char}
             </span>
@@ -93,7 +93,7 @@ const Page = () => {
         {receipt ? (
           <div
             data-aos="zoom-in"
-            className="mt-6 w-full border border-yellow-400/40 bg-[#03395c] rounded-lg p-6 space-y-4"
+            className="mt-6 w-full border border-yellow-400/40 bg-[var(--bg-card)] rounded-lg p-6 space-y-4"
           >
             {/* Header */}
             <div className="flex items-center gap-3">
@@ -110,7 +110,7 @@ const Page = () => {
             </div>
 
             {/* Divider */}
-            <div className="border-t border-[#055a8c]" />
+            <div className="border-t border-[var(--border)]" />
 
             {/* Details */}
             <div className="space-y-2 text-sm">
@@ -135,7 +135,7 @@ const Page = () => {
             </div>
 
             {/* Divider */}
-            <div className="border-t border-[#055a8c]" />
+            <div className="border-t border-[var(--border)]" />
 
             <p className="text-xs text-gray-500">
               I&apos;ll get back to you within{" "}
@@ -174,7 +174,7 @@ const Page = () => {
                   onChange={handleChange}
                   required
                   data-aos="fade-up"
-                  className="p-3 bg-[#03395c] border border-transparent focus:border-yellow-400 rounded-md text-white outline-none w-full transition-colors placeholder-gray-500"
+                  className="p-3 bg-[var(--bg-card)] border border-transparent focus:border-yellow-400 rounded-md text-white outline-none w-full transition-colors placeholder-gray-500"
                 />
                 <input
                   type="email"
@@ -184,7 +184,7 @@ const Page = () => {
                   onChange={handleChange}
                   required
                   data-aos="fade-up"
-                  className="p-3 bg-[#03395c] border border-transparent focus:border-yellow-400 rounded-md text-white outline-none w-full transition-colors placeholder-gray-500"
+                  className="p-3 bg-[var(--bg-card)] border border-transparent focus:border-yellow-400 rounded-md text-white outline-none w-full transition-colors placeholder-gray-500"
                 />
               </div>
 
@@ -196,7 +196,7 @@ const Page = () => {
                 onChange={handleChange}
                 required
                 data-aos="fade-up"
-                className="p-3 bg-[#03395c] border border-transparent focus:border-yellow-400 rounded-md text-white outline-none w-full transition-colors placeholder-gray-500"
+                className="p-3 bg-[var(--bg-card)] border border-transparent focus:border-yellow-400 rounded-md text-white outline-none w-full transition-colors placeholder-gray-500"
               />
 
               <textarea
@@ -207,7 +207,7 @@ const Page = () => {
                 required
                 rows={5}
                 data-aos="fade-up"
-                className="p-3 bg-[#03395c] border border-transparent focus:border-yellow-400 rounded-md text-white outline-none w-full transition-colors resize-none placeholder-gray-500"
+                className="p-3 bg-[var(--bg-card)] border border-transparent focus:border-yellow-400 rounded-md text-white outline-none w-full transition-colors resize-none placeholder-gray-500"
               />
 
               <p className="text-sm text-yellow-600 caveat">&lt;button&gt;</p>

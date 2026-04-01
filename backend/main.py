@@ -49,6 +49,15 @@ def init_db():
             created_at TIMESTAMP DEFAULT NOW()
         )
     """)
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS visitors (
+            id SERIAL PRIMARY KEY,
+            count INTEGER NOT NULL DEFAULT 0
+        )
+    """)
+    cur.execute("SELECT COUNT(*) FROM visitors")
+    if cur.fetchone()[0] == 0:
+        cur.execute("INSERT INTO visitors (count) VALUES (0)")
     conn.commit()
     cur.close()
     conn.close()
@@ -164,6 +173,35 @@ def submit_contact(form: ContactForm):
         }
     except Exception:
         raise HTTPException(status_code=500, detail="Database error. Please try again.")
+
+
+@app.post("/api/visitors")
+def track_visitor():
+    try:
+        conn = get_db_connection()
+        cur = conn.cursor()
+        cur.execute("UPDATE visitors SET count = count + 1 WHERE id = 1 RETURNING count")
+        row = cur.fetchone()
+        conn.commit()
+        cur.close()
+        conn.close()
+        return {"count": row[0]}
+    except Exception:
+        raise HTTPException(status_code=500, detail="DB error")
+
+
+@app.get("/api/visitors")
+def get_visitors():
+    try:
+        conn = get_db_connection()
+        cur = conn.cursor()
+        cur.execute("SELECT count FROM visitors WHERE id = 1")
+        row = cur.fetchone()
+        cur.close()
+        conn.close()
+        return {"count": row[0] if row else 0}
+    except Exception:
+        raise HTTPException(status_code=500, detail="DB error")
 
 
 @app.get("/api/contacts")

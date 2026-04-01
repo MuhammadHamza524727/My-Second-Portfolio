@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Caveat, Nunito } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Providers from "@/components/Providers";
 
 const caveat_init = Caveat({
   subsets: ["latin"],
@@ -26,10 +27,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${caveat_init.variable} ${nunito_init.variable} ${nunito_init.className}`}>
-        {children}
-        <Navbar />
+        <Providers>
+          <Navbar />
+          {children}
+        </Providers>
       </body>
     </html>
   );

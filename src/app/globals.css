@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Theme CSS Variables ── */
+:root {
+  /* Light mode — warm white, sidebar stays dark */
+  --bg: #fdf8f2;
+  --bg-card: #ffffff;
+  --bg-nav: #0d2233;          /* sidebar dark even in light mode */
+  --bg-input: #f5ede0;
+  --border: #e8d5b8;
+  --text: #1a0f02;
+  --text-muted: #6b4f2a;
+}
+
+.dark {
+  --bg: #022C43;
+  --bg-card: #03395c;
+  --bg-nav: #0d2233;
+  --bg-input: #03395c;
+  --border: #1a3a52;
+  --text: #ffffff;
+  --text-muted: #94a3b8;
+}
+
+/* ── Typing cursor blink ── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.animate-blink {
+  animation: blink 1s step-start infinite;
+}
+
 
 .animate-pacman-move {
   animation: pacman-move 1s infinite linear;

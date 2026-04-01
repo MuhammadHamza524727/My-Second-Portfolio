@@ -4,7 +4,7 @@ import nextIcon from "/public/next.png";
 
 const RotatingCube = () => {
   return (
-    <div className="flex  sm:hidden md:block  items-start justify-center  bg-[#022C43]">
+    <div className="flex sm:hidden md:block items-start justify-center bg-[var(--bg)]">
       <div className="relative w-48 h-48 perspective">
         <div className="cube  w-full h-full absolute transform-style-preserve-3d animate-spin-slow">
           {/* Top Side */}

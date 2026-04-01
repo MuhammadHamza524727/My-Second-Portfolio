@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(grep -n \"h-screen\\\\|min-h-screen\" src/app/layout.tsx src/app/*.tsx src/components/HomePage.tsx)",
+      "Bash(npm ls:*)",
+      "Bash(npx tsc:*)"
     ]
   }
 }
