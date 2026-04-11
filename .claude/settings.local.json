@@ -4,7 +4,11 @@
       "Bash(npm run:*)",
       "Bash(grep -n \"h-screen\\\\|min-h-screen\" src/app/layout.tsx src/app/*.tsx src/components/HomePage.tsx)",
       "Bash(npm ls:*)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(curl -s \"https://api.github.com/repos/MuhammadHamza524727/Petrol-Subsidy-Demo-App\")",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('homepage:', d.get\\('homepage',''\\)\\)\")",
+      "Bash(curl -s \"https://api.github.com/repos/MuhammadHamza524727/Haau_React_App\")",
+      "Bash(curl -s \"https://api.github.com/repos/MuhammadHamza524727/phase-4-todo-cli-app\")"
     ]
   }
 }

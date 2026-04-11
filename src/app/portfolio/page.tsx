@@ -35,6 +35,51 @@ const langColors: Record<string, string> = {
 
 type FilterType = "all" | "frontend" | "typescript" | "react" | "supabase";
 
+const featuredProjects = [
+  {
+    name: "Petrol-Subsidy-Demo-App",
+    description: "AI-powered petrol subsidy management demo app built with Next.js and TypeScript.",
+    tags: ["Next.js", "TypeScript", "AI"],
+    github: "https://github.com/MuhammadHamza524727/Petrol-Subsidy-Demo-App",
+    demo: "https://petrol-subsidy-demo-app.vercel.app",
+  },
+  {
+    name: "speckitplus-hackhathon",
+    description: "RAG chatbot powered by Qdrant vector database — hackathon project with local Python ingestion pipeline.",
+    tags: ["Python", "RAG", "Qdrant", "AI"],
+    github: "https://github.com/MuhammadHamza524727/speckitplus-hackhathon",
+    demo: "https://speckitplus-hackhathon.vercel.app",
+  },
+  {
+    name: "Final_Hackathon_smit",
+    description: "Full-stack SMIT final hackathon project with a dedicated backend — built under competition pressure.",
+    tags: ["React", "Node.js", "Full-Stack"],
+    github: "https://github.com/MuhammadHamza524727/Final_Hackathon_smit",
+    demo: "https://final-hackathon-smit-two.vercel.app",
+  },
+  {
+    name: "Tickchen_Web_Frontend",
+    description: "Frontend of Tickchen — a complete web platform with a separate production backend.",
+    tags: ["React", "TypeScript", "UI/UX"],
+    github: "https://github.com/MuhammadHamza524727/Tickchen_Web_Frontend",
+    demo: "https://tickchen-web-frontend.vercel.app",
+  },
+  {
+    name: "Haau_React_App",
+    description: "A polished React application — one of my earlier full React projects showcasing component architecture.",
+    tags: ["React", "JavaScript", "CSS"],
+    github: "https://github.com/MuhammadHamza524727/Haau_React_App",
+    demo: "https://haau-react-app.vercel.app",
+  },
+  {
+    name: "phase-4-todo-cli-app",
+    description: "Phase 4 of a 5-phase agentic CLI todo app series — built with TypeScript and advanced CLI patterns.",
+    tags: ["TypeScript", "CLI", "Node.js"],
+    github: "https://github.com/MuhammadHamza524727/phase-4-todo-cli-app",
+    demo: "https://phase-4-todo-cli-app.vercel.app",
+  },
+];
+
 const staticProjects = [
   { href: "https://ali-express-clone-peach.vercel.app/", src: "/aliexpe.png", alt: "AliExpress Clone", category: "frontend" as FilterType },
   { href: "https://sportshold-web.vercel.app/", src: "/sportshold.png", alt: "Sports Project", category: "frontend" as FilterType },
@@ -92,8 +137,46 @@ const Page = () => {
           <p className="text-sm md:mt-2 text-yellow-600 caveat">&lt;/h1&gt;</p>
         </h1>
 
+        {/* ── Featured Projects ── */}
+        <p className="text-sm text-yellow-500 caveat mt-6 mb-4">&lt;p&gt; Top Works &lt;/p&gt;</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
+          {featuredProjects.map((project) => (
+            <div
+              key={project.name}
+              data-aos="zoom-in"
+              className="group bg-[var(--bg-card)] border border-[var(--border)] hover:border-yellow-400 rounded-lg p-5 flex flex-col gap-3 transition-all"
+            >
+              <h3 className="text-yellow-400 font-semibold text-sm truncate group-hover:text-yellow-300">
+                {project.name}
+              </h3>
+              <p className="text-[var(--text-muted)] text-xs flex-1 leading-relaxed">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="text-[10px] px-2 py-0.5 rounded-full bg-yellow-400/10 text-yellow-400 border border-yellow-400/20">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div className="flex items-center gap-3 mt-auto pt-2 border-t border-[var(--border)]">
+                <Link href={project.github} target="_blank" className="flex items-center gap-1 text-xs text-[var(--text-muted)] hover:text-yellow-400 transition-colors">
+                  <IoLogoGithub className="text-base" /> GitHub
+                </Link>
+                {project.demo && (
+                  <Link href={project.demo} target="_blank" className="text-xs text-[var(--text-muted)] hover:text-yellow-400 transition-colors">
+                    Live Demo →
+                  </Link>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="text-sm text-yellow-500 caveat mt-2 mb-8">&lt;/p&gt;</p>
+
         {/* ── Filter Buttons ── */}
-        <div className="flex flex-wrap gap-2 mt-6">
+        <p className="text-sm text-yellow-500 caveat mb-4">&lt;p&gt; More Projects &lt;/p&gt;</p>
+        <div className="flex flex-wrap gap-2">
           {filters.map(({ label, value }) => (
             <button
               key={value}
@@ -128,6 +211,8 @@ const Page = () => {
             <p className="text-[var(--text-muted)] text-sm mt-4">No projects in this category.</p>
           )}
         </div>
+
+        <p className="text-sm text-yellow-500 caveat mt-2 mb-6">&lt;/p&gt;</p>
 
         {/* ── GitHub Repos ── */}
         <p className="text-base md:mt-8 mt-6 text-yellow-500 caveat flex items-center gap-2">

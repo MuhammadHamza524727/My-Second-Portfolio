@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import RotatingCube from "@/components/RotatingCube";
+import Image from "next/image";
 
 const skills = [
   { name: "HTML5 / CSS3", level: 95 },
@@ -41,19 +41,47 @@ const Page = () => {
 
         <div data-aos="zoom-in-right" className="flex flex-col md:flex-row gap-8 md:gap-16">
           <p className="md:text-[14px] flex sm:text-[10px] mt-4 text-[var(--text-muted)] sm:w-[80%] md:w-[50%]">
-            I&apos;m a passionate front-end developer on a journey to become a
-            full-stack powerhouse. <br />
-            I hold a cybersecurity fundamentals certificate from Banoqabil and
-            am continuously expanding my skill set in cutting-edge fields such
-            as generative AI, web3, metaverse, and cloud native computing.{" "}
-            <br />
-            Currently enrolled at GIAIC, I am also diving deep into the latest
-            advancements in AI technology. <br />
-            My goal is to leverage this diverse knowledge to create impactful
-            digital experiences that push the boundaries of Generative A.I.
+            I&apos;m a Full-Stack Developer who has built everything from
+            e-commerce platforms and MERN stack apps to AI-powered agents and
+            RAG chatbots. <br />
+            I work with Next.js, React, TypeScript, and Python — and have
+            hands-on experience with Supabase, Sanity CMS, Docker, and
+            integrating LLMs like Claude and Qwen via OpenRouter. <br />
+            I&apos;ve competed in multiple hackathons including an AI Employee
+            Hackathon where I earned a Bronze tier, and built agentic CLI tools
+            across 5 phases. <br />
+            Currently enrolled at GIAIC, I hold a cybersecurity fundamentals
+            certificate from Banoqabil and keep pushing into Generative AI,
+            Web3, and cloud native computing.
           </p>
-          <div>
-            <RotatingCube />
+          {/* Terminal Frame */}
+          <div data-aos="zoom-in-left" className="flex-shrink-0">
+            <div className="rounded-lg overflow-hidden border border-[var(--border)] shadow-lg shadow-yellow-400/10 w-[260px]">
+              {/* Terminal Header */}
+              <div className="bg-[#0d1f2d] flex items-center gap-2 px-4 py-2.5 border-b border-[var(--border)]">
+                <span className="w-3 h-3 rounded-full bg-red-500" />
+                <span className="w-3 h-3 rounded-full bg-yellow-400" />
+                <span className="w-3 h-3 rounded-full bg-green-500" />
+                <span className="ml-3 text-[11px] text-[var(--text-muted)] font-mono tracking-wide">
+                  ~/muhammad-hamza
+                </span>
+              </div>
+              {/* Image */}
+              <div className="relative w-[260px] h-[300px]">
+                <Image
+                  src="/myimage.jpg"
+                  alt="Muhammad Hamza"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              {/* Terminal Footer */}
+              <div className="bg-[#0d1f2d] px-4 py-2 border-t border-[var(--border)]">
+                <p className="text-[11px] font-mono text-yellow-400">
+                  <span className="text-green-400">❯</span> Full-Stack Developer
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
